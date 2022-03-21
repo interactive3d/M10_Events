@@ -25,6 +25,7 @@ public class UI_Controller : MonoBehaviour
         else
         {
             Instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
     }
 
@@ -70,7 +71,7 @@ public class UI_Controller : MonoBehaviour
               InScene();
           }*/
         StartCoroutine("CheckTheCurrentScene");
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        // Debug.Log(SceneManager.GetActiveScene().buildIndex);
     }
 
     #endregion
@@ -79,7 +80,7 @@ public class UI_Controller : MonoBehaviour
     IEnumerator CheckTheCurrentScene()
     {
         yield return new WaitForSeconds(0.01f);
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        // Debug.Log(SceneManager.GetActiveScene().buildIndex);
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             InHome();
